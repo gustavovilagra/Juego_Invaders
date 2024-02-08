@@ -1,0 +1,12 @@
+[package]
+name = "invaders_sld2"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+sdl2 = { version = "*", features = ["image","ttf"] }
+
+rusty_audio = "1.1.4"
+rusty_time = "0.11.0"
+rand = "0.8.3"
+
