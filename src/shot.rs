@@ -1,10 +1,7 @@
-
-   
+use sdl2::pixels::Color;
 use sdl2::rect::Rect;
 use sdl2::render::Canvas;
 use sdl2::video::Window;
-use sdl2::pixels::Color;
-
 
 use crate::{HEIGHT, PLAYER_SIZE};
 
@@ -13,11 +10,11 @@ pub struct Shot {
     pub y: i32,
     pub active: bool,
     pub direction: i32, // -1 para arriba (jugador), 1 para abajo (invasores)
-    pub speed: i32,    // Velocidad del disparo
+    pub speed: i32,     // Velocidad del disparo
 }
 
 impl Shot {
-    pub fn new(x: i32, y: i32, direction: i32,speed:i32) -> Shot {
+    pub fn new(x: i32, y: i32, direction: i32, speed: i32) -> Shot {
         Shot {
             x,
             y,
@@ -32,7 +29,6 @@ impl Shot {
         if self.y < 0 || self.y > HEIGHT as i32 {
             self.active = false;
         }
-    
     }
 
     pub fn draw(&self, canvas: &mut Canvas<Window>) {
