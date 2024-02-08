@@ -37,7 +37,7 @@ impl<'a> Game<'a> {
         
             let player_rect = Rect::new(
                 (player.x * PLAYER_SIZE as f32).round() as i32 - 17,
-                // player.x * PLAYER_SIZE - 17, // Ajustar según la posición real del jugador
+             
                 player.y * PLAYER_SIZE - 70, // Ajustar según la posición real del jugador
                 PLAYER_SIZE as u32 + 50,     // Ancho del jugador
                 PLAYER_SIZE as u32 + 60,     // Altura del jugador
@@ -68,7 +68,7 @@ impl<'a> Game<'a> {
                         self.is_game_over = true;
                         self.is_player_exploding = true;
                         self.explosion_start = Instant::now();
-                         // Establecer la variable is_hit en true
+                         
                         player.is_hit = true;
                         return;
                     }
@@ -79,7 +79,7 @@ impl<'a> Game<'a> {
     }
 
     pub fn draw(&self, canvas: &mut Canvas<Window>, player: &mut Player) {
-        // ... dibujar el juego ...
+        // dibujar player
       
         if self.is_player_exploding && self.explosion_start.elapsed() < Duration::from_millis(500) {
             let explosion_rect = Rect::new(
@@ -100,7 +100,6 @@ impl<'a> Game<'a> {
         self.explosion_start = Instant::now();
         
         
-        // Agrega cualquier otra lógica de reinicio necesaria
-        // ...
+      
     }
 }

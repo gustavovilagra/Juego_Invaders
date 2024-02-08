@@ -65,7 +65,7 @@ impl<'a> Player<'a> {
         if self.moving_right {
             self.x += PLAYER_SPEED * delta_time;
         }  
-        // Asegúrate de que el jugador no salga de los límites de la pantalla
+        // Marca los límites de la pantalla para Player
         self.x = self.x.clamp(0.0, 57.0); 
 
     }

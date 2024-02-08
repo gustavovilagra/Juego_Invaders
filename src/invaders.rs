@@ -44,7 +44,7 @@ impl<'a> Invader<'a> {
     pub fn draw(&self, canvas: &mut Canvas<Window>, explosion_texture: &Texture, level: u32) {
         if self.active {
             let rect = if level == 4 {
-                // Ajusta el tamaño para el nivel 1 (nave suprema)
+                // Ajusta el tamaño para el nivel 4 (nave suprema)
                 Rect::new(self.x * 20, self.y * 20, INVADER_WIDTH as u32 * 12, INVADER_HEIGHT as u32 * 12)
             } else if level == 3 {
                 Rect::new(self.x * 20, self.y * 20, INVADER_WIDTH as u32 * 3, INVADER_HEIGHT as u32 * 3)
@@ -76,7 +76,7 @@ pub struct Invaders<'a> {
    
 }
 
-impl<'a> Invaders<'a> { // Añadir el tiempo de vida aquí
+impl<'a> Invaders<'a> {
     
     pub fn new(texture_creator: &'a TextureCreator<WindowContext>, level: u32) -> Result<Invaders<'a>, String> {
         let mut army = Vec::new();
@@ -106,7 +106,7 @@ impl<'a> Invaders<'a> { // Añadir el tiempo de vida aquí
             2 => {
               
 
-               // Configuración para el nivel 1
+               // Configuración para el nivel 2
                let rows = 5;
                let cols = 14;
                let invader_spacing_x = 4;
@@ -160,7 +160,7 @@ impl<'a> Invaders<'a> { // Añadir el tiempo de vida aquí
                 }
                 (20, 1000) // Duración del temporizador de movimiento y disparo
             },
-            // Agrega más casos para otros niveles aquí
+          
             _ => {
                 // Configuración por defecto o para niveles desconocidos
                 (1000, 1500) // Duración del temporizador de movimiento y disparo por defecto

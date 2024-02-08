@@ -254,7 +254,7 @@ fn main() -> Result<(), String> {
       }
  
     //configuracion del video win
-      // Número total de imágenes
+     // Número total de imágenes
       const NUM_IMAGES_WIN: usize = 152;
 
       // Duración total deseada en segundos
@@ -269,7 +269,7 @@ fn main() -> Result<(), String> {
       }
  
 
-    'game: loop { // Asume que tienes una constante MAX_LEVEL definida
+    'game: loop { 
         let mut invaders = Invaders::new(&texture_creator, level)?;
         let mut last_update = Instant::now();
 
@@ -519,7 +519,7 @@ fn main() -> Result<(), String> {
 
                     canvas.present();
                     std::thread::sleep(Duration::from_secs(2));
-                   // player.reset_player_position();
+             
           
 
                 } else {
@@ -572,7 +572,6 @@ fn main() -> Result<(), String> {
 
                 lost_life = false; // Restablecer el indicador de pérdida de vida
 
-                // Puedes reiniciar el bucle 'gameloop' aquí si es necesario
                 continue 'gameloop;              
             }
         
